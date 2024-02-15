@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ismail.creatvt.indigowallet">
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.IndigoWallet.Splash">
+        <activity android:name=".settings.wallets.ManageWalletsActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"  />
+        <activity android:name=".search.SearchActivity"
+            android:screenOrientation="portrait"  />
+        <activity
+            android:name=".setup.SetupActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".addtransaction.AddEditTransactionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".HomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SplashActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".settings.SettingsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".settings.categories.CategoriesActivity"
+            android:windowSoftInputMode="adjustPan" />
+    </application>
+
+</manifest>

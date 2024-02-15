@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/Widget.IndigoWallet.Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/settings" />
+
+    <com.ismail.creatvt.indigowallet.customview.TopRoundedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:color="?colorPrimary"
+        android:radius="24dp"
+        android:background="@drawable/transaction_form_background_shape"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:orientation="vertical">
+
+            <com.ismail.creatvt.indigowallet.customview.SettingsItemCardView
+                android:id="@+id/manage_wallets"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:title="@string/manage_wallets"
+                android:description="@string/manage_wallets_description"
+                android:icon="@drawable/ic_wallet_settings" />
+
+            <com.ismail.creatvt.indigowallet.customview.SettingsItemCardView
+                android:id="@+id/manage_categories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:title="@string/manage_categories"
+                android:description="@string/manage_categories_description"
+                android:icon="@drawable/ic_category_settings" />
+
+            <com.ismail.creatvt.indigowallet.customview.SettingsItemCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:title="@string/sync_data"
+                android:icon="@drawable/drive_icon"
+                android:description="@string/sync_data_description"/>
+        </LinearLayout>
+    </com.ismail.creatvt.indigowallet.customview.TopRoundedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

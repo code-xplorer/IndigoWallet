@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="icon"
+            type="com.ismail.creatvt.indigowallet.utility.IconFactory.Icon" />
+        <variable
+            name="isSelected"
+            type="boolean" />
+        <variable
+            name="listener"
+            type="com.ismail.creatvt.indigowallet.settings.categories.edit.IconClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ripple_background"
+        android:onClick="@{(v)->listener.onIconClick(v, icon)}">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            app:transitionName="@{icon.name}"
+            tools:background="@drawable/category_icon_background"
+            tools:src="@drawable/icon_category_ac"
+            android:background="@{isSelected ? @drawable/category_icon_background : @drawable/category_icon_light_background}"
+            android:contentDescription="@string/category_icon"
+            android:padding="4dp"
+            app:imageResource="@{icon.iconRes}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="?colorOnSecondary" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

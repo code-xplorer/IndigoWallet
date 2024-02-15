@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="adapter"
+            type="androidx.viewpager2.adapter.FragmentStateAdapter" />
+        <variable
+            name="listener"
+            type="com.ismail.creatvt.indigowallet.icons.IconPickerListener" />
+        <variable
+            name="nextEnabled"
+            type="androidx.lifecycle.MutableLiveData&lt;Boolean&gt;" />
+        <variable
+            name="prevEnabled"
+            type="androidx.lifecycle.MutableLiveData&lt;Boolean&gt;" />
+        <variable
+            name="selectedIcon"
+            type="androidx.lifecycle.MutableLiveData&lt;Integer&gt;" />
+        <variable
+            name="selectedColor"
+            type="androidx.lifecycle.MutableLiveData&lt;Integer&gt;" />
+        <variable
+            name="colorSelectedListener"
+            type="com.ismail.creatvt.indigowallet.customview.ColorSelectorView.OnColorSelectedListener" />
+        <variable
+            name="initialColor"
+            type="Integer" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:background="@android:color/white">
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/select_icon"
+            android:textAllCaps="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_marginTop="8dp"
+            android:padding="4dp"
+            app:cardCornerRadius="36dp"
+            app:cardElevation="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView18">
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="4dp"
+                android:padding="8dp"
+                android:background="@drawable/category_icon_background"
+                app:iconImageColorSetup="@{selectedColor}"
+                app:imageResource="@{selectedIcon}" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:layout_marginBottom="48dp"
+            app:adapter="@{adapter}"
+            app:onPageChanged="@{listener::onPageChanged}"
+            app:layout_constraintBottom_toTopOf="@+id/button3"
+            app:layout_constraintEnd_toStartOf="@+id/imageView10"
+            app:layout_constraintStart_toEndOf="@+id/imageView11"
+            app:layout_constraintTop_toBottomOf="@+id/colorSelectorView" />
+
+        <com.ismail.creatvt.indigowallet.customview.ColorSelectorView
+            android:id="@+id/colorSelectorView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="16dp"
+            app:initialColor="@{initialColor}"
+            app:onColorSelected="@{colorSelectedListener}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+        <Button
+            android:id="@+id/button3"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel"
+            android:onClick="@{(v)->listener.onCancelClicked()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button4" />
+
+        <Button
+            android:id="@+id/button4"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ok"
+            android:onClick="@{(v)->listener.onOkClicked()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="0dp"
+            android:paddingTop="40dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="40dp"
+            android:alpha="@{nextEnabled ? 1f : 0.4f}"
+            android:clickable="@{nextEnabled}"
+            android:focusable="@{nextEnabled}"
+            android:onClick="@{(v)->listener.onNextClick()}"
+            app:layout_constraintBottom_toBottomOf="@+id/viewPager2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/viewPager2"
+            app:srcCompat="@drawable/ic_baseline_chevron_right_24"
+            app:tint="?colorOnSurface" />
+
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingTop="40dp"
+            android:paddingEnd="0dp"
+            android:paddingBottom="40dp"
+            android:alpha="@{prevEnabled ? 1f : 0.4f}"
+            android:clickable="@{prevEnabled}"
+            android:focusable="@{prevEnabled}"
+            android:onClick="@{(v)->listener.onPrevClick()}"
+            app:layout_constraintBottom_toBottomOf="@+id/viewPager2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/viewPager2"
+            app:srcCompat="@drawable/ic_baseline_chevron_left_24"
+            app:tint="?colorOnSurface" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

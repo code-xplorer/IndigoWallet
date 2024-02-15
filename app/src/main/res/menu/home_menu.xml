@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/transactions_nav"
+        android:icon="@drawable/import_export_selector"
+        android:title="@string/transactions"/>
+
+    <item android:title=""
+        android:id="@+id/placeholder"
+        android:enabled="false"/>
+
+    <item
+        android:id="@+id/statistics_nav"
+        android:title="@string/statistics"
+        android:icon="@drawable/bar_chart_selector"/>
+
+</menu>

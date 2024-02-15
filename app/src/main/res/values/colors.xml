@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#064789</color>
+    <color name="colorPrimaryVariant">#053d76</color>
+    <color name="colorSecondary">#F7B32B</color>
+    <color name="colorSecondaryVariant">#E09A0D</color>
+    <color name="colorPrimaryLight">#006FE0</color>
+
+    <color name="orange">#FF5900</color>
+    <color name="grey_400">#bdbdbd</color>
+    <color name="greyishBlue">#D2D2E6</color>
+    <color name="transparentWhite">#80FFFFFF</color>
+
+    <color name="lightWhite">#14064789</color>
+    <color name="colorError">#FF1B1C</color>
+    <color name="green_500">#4caf50</color>
+    <color name="red_500">#f44336</color>
+    <color name="grey_500">#9e9e9e</color>
+    <color name="blue_grey_700">#455a64</color>
+    <color name="colorOutline">#EFF4FF</color>
+
+    <color name="colorPrimaryTransparent">#7F7CBDFF</color>
+    <color name="grey_800">#424242</color>
+    <color name="grey_600">#757575</color>
+
+    <color name="iconTintColor">#6EB6FF</color>
+    <color name="colorSecondaryTransparent">#80F7B32B</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="light_blue_900">#FF01579B</color>
+    <color name="light_blue_A200">#FF40C4FF</color>
+    <color name="light_blue_A400">#FF00B0FF</color>
+    <color name="black_overlay">#66000000</color>
+</resources>

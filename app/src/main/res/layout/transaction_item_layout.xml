@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="transaction"
+            type="com.ismail.creatvt.indigowallet.db.entity.MoneyTransactionWithWallet" />
+        <variable
+            name="viewModel"
+            type="com.ismail.creatvt.indigowallet.TransactionListRepository" />
+        <import type="com.ismail.creatvt.indigowallet.db.entity.MoneyTransaction"/>
+        <import type="com.ismail.creatvt.indigowallet.utility.DateTimeFormatter"/>
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipChildren="false"
+        android:clipToPadding="false">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            app:cardElevation="0dp"
+            android:onClick="@{(v)->viewModel.onTransactionClick(v, transaction)}"
+            app:strokeColor="@color/grey_400"
+            app:strokeWidth="1dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@{transaction.transaction.name}"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/imageView5"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Bread" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="@{transaction.walletString}"
+                    android:textSize="14sp"
+                    android:textColor="@color/blue_grey_700"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/textView4"
+                    app:layout_constraintTop_toBottomOf="@+id/textView4"
+                    tools:text="Bank of India" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:textColor="@color/blue_grey_700"
+                    android:text="@{DateTimeFormatter.getFormattedTime(transaction.transaction.timestamp)}"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/textView6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="05:11 PM" />
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:text="@{transaction.transaction.amountValue}"
+                    android:textStyle="bold"
+                    android:textColor="@{transaction.transaction.typeColor == 0 ? 0 : context.getColor(transaction.transaction.typeColor)}"
+                    android:textSize="16sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/textView4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="$20000" />
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    app:iconImageSetup="@{transaction.colorRes}"
+                    android:background="@drawable/category_icon_background"
+                    android:padding="4dp"
+                    app:imageResource="@{transaction.iconRes}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/icon_category_ac" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

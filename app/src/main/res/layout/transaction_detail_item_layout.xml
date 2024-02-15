@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:parentTag="com.google.android.material.card.MaterialCardView"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/from_wallet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline12"
+            app:layout_constraintStart_toStartOf="@+id/guideline11"
+            app:layout_constraintTop_toTopOf="@+id/guideline14" />
+
+        <TextView
+            android:id="@+id/amount_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textSize="40sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline12"
+            app:layout_constraintStart_toStartOf="@+id/guideline11"
+            app:layout_constraintTop_toBottomOf="@+id/arrow_tail" />
+
+        <TextView
+            android:id="@+id/to_wallet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline15"
+            app:layout_constraintEnd_toEndOf="@+id/amount_text"
+            app:layout_constraintStart_toStartOf="@+id/amount_text"
+            app:layout_constraintTop_toBottomOf="@+id/arrow_head" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="32dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="32dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="24dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="24dp" />
+
+        <ImageView
+            android:id="@+id/arrow_tail"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            app:layout_constraintEnd_toEndOf="@+id/from_wallet"
+            app:layout_constraintStart_toStartOf="@+id/from_wallet"
+            app:layout_constraintTop_toBottomOf="@+id/from_wallet"
+            app:srcCompat="@drawable/arrow_tail" />
+
+        <ImageView
+            android:id="@+id/arrow_head"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            app:layout_constraintEnd_toEndOf="@+id/amount_text"
+            app:layout_constraintStart_toStartOf="@+id/amount_text"
+            app:layout_constraintTop_toBottomOf="@+id/amount_text"
+            app:srcCompat="@drawable/arrow_head" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</merge>

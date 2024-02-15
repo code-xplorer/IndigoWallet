@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ColorSelectorView">
+        <attr name="trackHeight" format="dimension"/>
+        <attr name="thumbRadius" format="dimension"/>
+        <attr name="colors" format="reference"/>
+        <attr name="selectedColor" format="color"/>
+        <attr name="selectedPosition" format="integer"/>
+        <attr name="thumbColorInset" format="dimension"/>
+    </declare-styleable>
+
+    <dimen name="color_picker_thumb_radius">16dp</dimen>
+    <dimen name="color_picker_thumb_color_inset">2dp</dimen>
+    <dimen name="color_picker_track_height">16dp</dimen>
+    <dimen name="color_picker_default_track_color_width">16dp</dimen>
+
+    <color name="color_red">#FF1744</color>
+    <color name="color_light_red">#FE4F1E</color>
+    <color name="color_orange_dark">#FF6600</color>
+    <color name="color_orange">#FA8E1A</color>
+    <color name="color_yellow">#FFB60C</color>
+    <color name="color_light_yellow">#FFEF0C</color>
+    <color name="color_yellow_green">#AAD900</color>
+    <color name="color_light_green">#53D106</color>
+    <color name="color_green">#00C62C</color>
+    <color name="color_mid_green">#3A9702</color>
+    <color name="color_dark_green">#006E11</color>
+    <color name="color_dark_green_blue">#00994D</color>
+    <color name="color_green_blue">#00DE70</color>
+    <color name="color_light_blue">#00B1A7</color>
+    <color name="color_blue">#008FBC</color>
+    <color name="color_dark_blue">#0063BE</color>
+    <color name="color_light_indigo">#015CAF</color>
+    <color name="color_indigo">#3343CD</color>
+    <color name="color_dark_indigo">#3633CD</color>
+    <color name="color_light_purple">#3C03B6</color>
+    <color name="color_purple">#6829EE</color>
+    <color name="color_dark_purple">#8904FF</color>
+    <color name="color_dark_pink">#BC04FF</color>
+    <color name="color_pink">#F200C2</color>
+    <color name="color_brown">#712828</color>
+    <color name="color_light_brown">#794242</color>
+    <color name="color_light_grey">#666666</color>
+    <color name="color_grey">#4F4F4F</color>
+    <color name="color_dark_grey">#383838</color>
+
+    <array name="color_selector_colour_names">
+        <item>color_red</item>
+        <item>color_light_red</item>
+        <item>color_orange_dark</item>
+        <item>color_orange</item>
+        <item>color_yellow</item>
+        <item>color_light_yellow</item>
+        <item>color_yellow_green</item>
+        <item>color_light_green</item>
+        <item>color_green</item>
+        <item>color_mid_green</item>
+        <item>color_dark_green</item>
+        <item>color_dark_green_blue</item>
+        <item>color_green_blue</item>
+        <item>color_light_blue</item>
+        <item>color_blue</item>
+        <item>color_dark_blue</item>
+        <item>color_light_indigo</item>
+        <item>color_indigo</item>
+        <item>color_dark_indigo</item>
+        <item>color_light_purple</item>
+        <item>color_purple</item>
+        <item>color_dark_purple</item>
+        <item>color_dark_pink</item>
+        <item>color_pink</item>
+        <item>color_brown</item>
+        <item>color_light_brown</item>
+        <item>color_light_grey</item>
+        <item>color_grey</item>
+        <item>color_dark_grey</item>
+    </array>
+    <array name="color_selector_default_colors">
+        <item>@color/color_red</item>
+        <item>@color/color_light_red</item>
+        <item>@color/color_orange_dark</item>
+        <item>@color/color_orange</item>
+        <item>@color/color_yellow</item>
+        <item>@color/color_light_yellow</item>
+        <item>@color/color_yellow_green</item>
+        <item>@color/color_light_green</item>
+        <item>@color/color_green</item>
+        <item>@color/color_mid_green</item>
+        <item>@color/color_dark_green</item>
+        <item>@color/color_dark_green_blue</item>
+        <item>@color/color_green_blue</item>
+        <item>@color/color_light_blue</item>
+        <item>@color/color_blue</item>
+        <item>@color/color_dark_blue</item>
+        <item>@color/color_light_indigo</item>
+        <item>@color/color_indigo</item>
+        <item>@color/color_dark_indigo</item>
+        <item>@color/color_light_purple</item>
+        <item>@color/color_purple</item>
+        <item>@color/color_dark_purple</item>
+        <item>@color/color_dark_pink</item>
+        <item>@color/color_pink</item>
+        <item>@color/color_brown</item>
+        <item>@color/color_light_brown</item>
+        <item>@color/color_light_grey</item>
+        <item>@color/color_grey</item>
+        <item>@color/color_dark_grey</item>
+    </array>
+</resources>

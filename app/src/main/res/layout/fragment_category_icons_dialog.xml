@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="adapter"
+            type="com.ismail.creatvt.indigowallet.settings.categories.edit.CategoryIconsAdapter" />
+        <variable
+            name="colorAdapter"
+            type="com.ismail.creatvt.indigowallet.settings.categories.edit.CategoryColorAdapter" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/category_icon_list"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:padding="16dp"
+            app:adapter="@{adapter}"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:spanCount="4"
+            tools:listitem="@layout/category_icon_item" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TransactionAmountView">
+        <attr name="fromWallet" format="string"/>
+        <attr name="toWallet" format="string"/>
+        <attr name="amount" format="float"/>
+        <attr name="transactionType" format="enum">
+            <enum name="income" value="0"/>
+            <enum name="expense" value="1"/>
+            <enum name="transfer" value="2"/>
+        </attr>
+    </declare-styleable>
+</resources>

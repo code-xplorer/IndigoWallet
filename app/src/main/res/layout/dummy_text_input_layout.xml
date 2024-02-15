@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="60dp">
+
+    <TextView
+        android:id="@+id/text_view"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:background="@drawable/input_field_background"
+        android:gravity="bottom"
+        android:paddingStart="12dp"
+        android:paddingEnd="0dp"
+        android:paddingBottom="16dp"
+        tools:text="TextView"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/title_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:background="@android:color/white"
+        tools:text="TextView"
+        android:paddingEnd="4dp"
+        android:paddingStart="4dp"
+        android:textColor="?colorPrimary"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/text_view"
+        app:layout_constraintStart_toStartOf="@+id/text_view"
+        app:layout_constraintTop_toTopOf="@+id/text_view" />
+
+    <ImageView
+        android:id="@+id/icon_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:padding="8dp"
+        app:tint="?colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/text_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/text_view"
+        android:src="@drawable/ic_baseline_date_range_24" />
+</merge>

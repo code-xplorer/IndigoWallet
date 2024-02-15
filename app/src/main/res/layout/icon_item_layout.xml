@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="icon"
+            type="com.ismail.creatvt.indigowallet.utility.IconFactory.Icon" />
+        <variable
+            name="listener"
+            type="com.ismail.creatvt.indigowallet.icons.IconClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ripple_background"
+        android:onClick="@{(v)->listener.onIconClick(v, icon)}">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:padding="4dp"
+            android:contentDescription="@string/category_icon"
+            app:imageResource="@{icon.iconRes}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@android:color/black"
+            app:transitionName="@{icon.name}"
+            tools:background="@drawable/category_icon_background"
+            tools:src="@drawable/icon_category_ac" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

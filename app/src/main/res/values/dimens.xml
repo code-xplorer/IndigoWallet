@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="onedp">1dp</dimen>
+    <dimen name="halfdp">0.5dp</dimen>
+    <dimen name="quarterdp">0.25dp</dimen>
+    <dimen name="dialog_max_height">500dp</dimen>
+    <dimen name="icon_grid_gap">12dp</dimen>
+    <dimen name="medium_radius">20dp</dimen>
+</resources>

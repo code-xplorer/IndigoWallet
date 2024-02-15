@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="colorTransparentPrimary" format="color"/>
+    <attr name="colorTransparentSecondary" format="color"/>
+    <attr name="colorOnPrimaryLight" format="color"/>
+    <attr name="colorSurfaceLight" format="color"/>
+</resources>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.ismail.creatvt.indigowallet.search.SearchViewModel" />
+        <variable
+            name="adapter"
+            type="com.ismail.creatvt.indigowallet.transactions.TransactionAdapter" />
+        <import type="android.view.View"/>
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".search.SearchActivity">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            app:elevation="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/search_field"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/search_field_background"
+                    android:ems="10"
+                    android:hint="@string/search_transactions"
+                    android:inputType="textPersonName"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="10dp"
+                    android:text="@={viewModel.query}"
+                    android:textColor="?colorOnPrimary"
+                    android:textColorHint="@color/grey_400"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/imageButton2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/imageButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="8dp"
+                    android:onClick="@{(v)->viewModel.onFilterClick()}"
+                    app:fabCustomSize="45dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearanceOverlay="@style/FloatingButtonRoundRect"
+                    app:srcCompat="@drawable/ic_baseline_filter_alt_24" />
+
+                <ImageView
+                    android:id="@+id/imageView19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:onClick="@{(v)->viewModel.onSearchClick()}"
+                    app:layout_constraintBottom_toBottomOf="@+id/search_field"
+                    app:layout_constraintEnd_toEndOf="@+id/search_field"
+                    app:layout_constraintTop_toTopOf="@+id/search_field"
+                    app:srcCompat="@drawable/ic_baseline_search_24" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:cardBackgroundColor="?colorPrimaryVariant"
+                app:cardElevation="0dp"
+                android:visibility="@{viewModel.filters.empty ? View.GONE : View.VISIBLE}">
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="8dp"
+                    android:paddingStart="8dp"
+                    android:scrollbars="none"
+                    android:clipChildren="false"
+                    android:clipToPadding="false">
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:singleLine="true"
+                        app:filterItems="@{viewModel.filters}"
+                        app:onCloseClick="@{viewModel::onRemoveFilter}"
+                        app:onChipClick="@{viewModel::onChipClick}"
+                        />
+                </HorizontalScrollView>
+            </com.google.android.material.card.MaterialCardView>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:animateLayoutChanges="true"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+            <com.ismail.creatvt.indigowallet.customview.TopRoundedRecyclerView
+                android:id="@+id/topRoundedRecyclerView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/transaction_form_background_shape"
+                android:color="?colorPrimary"
+                android:radius="24dp"
+                app:adapter="@{adapter}"
+                android:overScrollMode="never"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView18"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="64dp"
+                android:layout_marginEnd="64dp"
+                android:visibility="@{viewModel.transactions.empty ? View.VISIBLE : View.GONE}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_max="180dp"
+                app:srcCompat="@drawable/searching_image" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.ismail.creatvt.indigowallet.search.filter.DateFilterViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?colorSurface">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button10"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:text="@{viewModel.selectedDateStartString}"
+            android:onClick="@{viewModel::onSelectStartDate}"
+            app:icon="@drawable/ic_baseline_date_range_24"
+            app:layout_constraintEnd_toStartOf="@+id/textView27"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView27"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/to"
+            app:layout_constraintBottom_toBottomOf="@+id/button10"
+            app:layout_constraintEnd_toStartOf="@+id/button11"
+            app:layout_constraintStart_toEndOf="@+id/button10"
+            app:layout_constraintTop_toTopOf="@+id/button10" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button11"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@{viewModel.selectedDateEndString}"
+            android:onClick="@{viewModel::onSelectEndDate}"
+            app:icon="@drawable/ic_baseline_date_range_24"
+            app:layout_constraintBottom_toBottomOf="@+id/button10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView27"
+            app:layout_constraintTop_toTopOf="@+id/button10" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/button13"
+            app:layout_constraintEnd_toEndOf="@+id/button11"
+            app:layout_constraintStart_toStartOf="@+id/button10"
+            app:layout_constraintTop_toBottomOf="@+id/button10">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip4"
+                style="@style/FilterAction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{viewModel::onLastSevenDaysClick}"
+                android:text="@string/last_7_days" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip5"
+                style="@style/FilterAction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{viewModel::onLastThirtyDaysClick}"
+                android:text="@string/last_30_days" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip6"
+                style="@style/FilterAction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{viewModel::onLastThreeMonthsClick}"
+                android:text="@string/last_3_months" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip8"
+                style="@style/FilterAction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{viewModel::onLastSixMonthsClick}"
+                android:text="@string/last_6_months" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip7"
+                style="@style/FilterAction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{viewModel::onLastYearClick}"
+                android:text="@string/last_1_year" />
+
+        </com.google.android.material.chip.ChipGroup>
+
+        <Button
+            style="@style/Widget.MaterialComponents.Button.TextButton.Dialog"
+            android:id="@+id/button12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="4dp"
+            android:text="@string/done"
+            android:onClick="@{(v)->viewModel.onDoneClick()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Button
+            style="@style/Widget.MaterialComponents.Button.TextButton.Dialog"
+            android:id="@+id/button13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="4dp"
+            android:text="@string/cancel"
+            android:onClick="@{(v)->viewModel.onCancelClick()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button12" />
+
+        <Button
+            style="@style/Widget.MaterialComponents.Button.TextButton.Dialog"
+            android:id="@+id/button14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="4dp"
+            android:text="@string/clear"
+            android:onClick="@{(v)->viewModel.onClearClick()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
